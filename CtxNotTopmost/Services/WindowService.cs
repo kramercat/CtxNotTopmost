@@ -197,7 +197,8 @@ namespace CtxNotTopmost.Services
                         activeWindow.Title = item.WindowTitle;
                         activeWindow.wHnd = item.Hwnd;
                         activeWindow.ProcessName = item.Process.ProcessName;
-                        if (activeWindow.ProcessName.ToLower() != "cdviewer" && activeWindow.ProcessName.ToLower() != "ctxnottopmost")
+                        string processName = activeWindow.ProcessName.ToLower();
+                        if (processName != "citrix.desktopviewer.app" && processName != "ctxnottopmost" && processName != "cdviewer")
                             activeWindows.Add(activeWindow);
                     }
                 }
